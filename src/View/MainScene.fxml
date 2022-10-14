@@ -11,9 +11,8 @@
             fx:controller="Controller.MainSceneController"
             prefHeight="800.0" prefWidth="600.0">
 
-    <Label fx:id="mainTitle" text="Hello World">Hello World</Label>
-    <Label fx:id="subTitle" text="Thats a demo!" />
-
-    <Button fx:id="mainButton" text="Click me!" onAction="#buttonClicked" />
+    <TextField fx:id="strengthInput" layoutX="400.0" layoutY="300.0" style="-fx-background-color: #fff;"/>
+    <Pane fx:id="textOutput" layoutX="251.0" layoutY="88.0" prefHeight="200.0" prefWidth="200.0" />
+    <Button fx:id="mainButton" text="Click me!" onAction="#buttonClicked"/>
 
 </AnchorPane>

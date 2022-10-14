@@ -25,7 +25,7 @@ public class MyApplication extends Application {
         primaryStage.setTitle("My Application");
         primaryStage.setWidth(800);
         primaryStage.setHeight(600);
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
 
         //createScene();
         loadScene();
