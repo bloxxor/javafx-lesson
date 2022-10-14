@@ -1,29 +1,58 @@
+import Controller.MainSceneController;
+import com.sun.tools.javac.Main;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class MyApplication extends Application {
+
+    Stage primaryStage;
 
     public static void run(String[] args) {
         launch(args);
     }
-
-    /**
-     * The main entry point for all JavaFX applications.
-     * The start method is called after the init method has returned,
-     * and after the system is ready for the application to begin running.
-     *
-     * <p>
-     * NOTE: This method is called on the JavaFX Application Thread.
-     * </p>
-     *
-     * @param primaryStage the primary stage for this application, onto which
-     *                     the application scene can be set.
-     *                     Applications may create other stages, if needed, but they will not be
-     *                     primary stages.
-     * @throws Exception if something goes wrong
-     */
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        this.primaryStage = primaryStage;
+
+        primaryStage.setTitle("My Application");
+        primaryStage.setWidth(800);
+        primaryStage.setHeight(600);
+        primaryStage.setResizable(false);
+
+        //createScene();
+        loadScene();
+        primaryStage.show();
+
+    }
+
+    public void createScene() {
+
+        Label helloWorldLabel = new Label("Hello World!");
+        helloWorldLabel.setAlignment(Pos.CENTER);
+
+        Scene primaryScene = new Scene(helloWorldLabel);
+        primaryStage.setScene(primaryScene);
+
+    }
+
+    public void loadScene() throws IOException {
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/View/MainScene.fxml"));
+
+        MainSceneController controller = loader.getController();
+        AnchorPane pane = loader.load();
+
+        Scene primaryScene = new Scene(pane);
+        primaryStage.setScene(primaryScene);
 
     }
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller.MainSceneController"
+            prefHeight="800.0" prefWidth="600.0">
+
+    <Label fx:id="mainTitle" text="Hello World">Hello World</Label>
+    <Label fx:id="subTitle" text="Thats a demo!" />
+
+    <Button fx:id="mainButton" text="Click me!" onAction="#buttonClicked" />
+
+</AnchorPane>
