@@ -1,5 +1,4 @@
 import Controller.MainSceneController;
-import com.sun.tools.javac.Main;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
@@ -23,12 +22,14 @@ public class MyApplication extends Application {
         this.primaryStage = primaryStage;
 
         primaryStage.setTitle("My Application");
-        primaryStage.setWidth(800);
-        primaryStage.setHeight(600);
-        primaryStage.setResizable(true);
+        primaryStage.setResizable(false);
 
-        //createScene();
+        // UI via Code
+        // createScene();
+
+        // UI via Scene Builder
         loadScene();
+
         primaryStage.show();
 
     }
@@ -49,6 +50,7 @@ public class MyApplication extends Application {
         loader.setLocation(getClass().getResource("/View/MainScene.fxml"));
 
         MainSceneController controller = loader.getController();
+
         AnchorPane pane = loader.load();
 
         Scene primaryScene = new Scene(pane);
